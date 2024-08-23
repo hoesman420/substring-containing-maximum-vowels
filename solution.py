@@ -1,13 +1,13 @@
 class Solution:
     def maxVowels(self, s: str, k: int) -> str:
         vowels = set("aeiou")
-        ans = cnt = sum(c in vowels for c in s[:k])
+        a = c = sum(c in vowels for c in s[:k])
         max_start_index = 0 
         
         for i in range(k, len(s)):
-            cnt += int(s[i] in vowels) - int(s[i - k] in vowels)
-            if cnt > ans:
-                ans = cnt
+            c += int(s[i] in vowels) - int(s[i - k] in vowels)
+            if c > a:
+                a = c
                 max_start_index = i - k + 1  
         
        
